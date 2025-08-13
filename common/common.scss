@@ -1321,3 +1321,39 @@ html.mobile-view {
 .select-kit .badge-category__icon .d-icon {
     color: inherit !important;
 }
+
+/* Üst menü linkleri: hover + aktif turuncu, pill buton */
+.custom-header-links,
+.header-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 8px auto;
+}
+
+.custom-header-links a,
+.header-links a {
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color .2s ease, color .2s ease;
+  color: var(--primary-high-or-secondary-low, #000); /* tema rengine uyar */
+}
+
+/* Hover (turuncu) */
+.custom-header-links a:hover,
+.header-links a:hover {
+  background-color: var(--tertiary, #e4572e);
+  color: #fff;
+}
+
+/* Aktif sekme (turuncu) — header-links bileşeni aria-current atıyorsa bu çalışır */
+.custom-header-links a[aria-current="page"],
+.header-links a[aria-current="page"],
+/* Bazı bileşenler active class kullanır */
+.custom-header-links a.active,
+.header-links a.active {
+  background-color: var(--tertiary, #e4572e);
+  color: #fff;
+}
